@@ -86,6 +86,15 @@ def _invalid_input_case(endpoint: EndpointProfile, app_import_path: str | None) 
             detail="No importable app was provided; manual mode records invalid input as a review scenario.",
             response_sample={"error": "INVALID_BUSINESS_INPUT"},
         )
+    if not _required_query_params(endpoint):
+        return SelfTestCase(
+            name="invalid business input is not applicable",
+            passed=True,
+            status_code=204,
+            expected_status=204,
+            detail="Endpoint has no required query parameters to omit for a deterministic invalid-input check.",
+            response_sample={},
+        )
 
     client = TestClient(_import_app(app_import_path))
     response = client.request(
@@ -105,14 +114,20 @@ def _invalid_input_case(endpoint: EndpointProfile, app_import_path: str | None) 
 
 def _happy_params(endpoint: EndpointProfile) -> dict[str, Any]:
     params = {}
-    for param in endpoint.parameters:
-        if param.location.value != "query" or not param.required:
-            continue
+    for param in _required_query_params(endpoint):
         if param.name.lower() == "symbol":
             params[param.name] = "BTC-USDT"
         else:
             params[param.name] = "demo"
     return params
+
+
+def _required_query_params(endpoint: EndpointProfile):
+    return [
+        param
+        for param in endpoint.parameters
+        if param.location.value == "query" and param.required
+    ]
 
 
 def _import_app(import_path: str):
@@ -131,4 +146,3 @@ def _json_or_text(response) -> dict[str, Any]:
     if isinstance(payload, dict):
         return payload
     return {"value": payload}
-
