@@ -3,7 +3,7 @@
 ## Service
 
 - Name: Token Price API
-- Endpoint: `GET /price`
+- Endpoint: `GET https://aitoday.xin/dragon-mcp/price`
 - Price: `0.01 USDG`
 - Payment mode: `one_time_exact`
 - Intended mode: `mock`

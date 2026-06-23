@@ -1,5 +1,5 @@
 {
-  "registration_status": "ready_for_manual_portal_submission_after_public_endpoint",
+  "registration_status": "public_https_demo_endpoint_deployed_seller_credentials_required",
   "provider": {
     "name": "Dragon MCP Pay Agent",
     "service_type": "A2MCP",
@@ -14,7 +14,7 @@
     "demo_service": "Token Price API",
     "method": "GET",
     "endpoint_path": "/price",
-    "public_endpoint_url": "TODO",
+    "public_endpoint_url": "https://aitoday.xin/dragon-mcp/price",
     "price": "0.01",
     "currency": "USDG",
     "payment_mode": "one_time_exact",
@@ -41,7 +41,7 @@
     "docs/okx-real-mode.md"
   ],
   "required_before_marketplace_listing": [
-    "Public HTTPS endpoint URL",
+    "Public HTTPS endpoint URL: https://aitoday.xin/dragon-mcp/price",
     "Recipient wallet address",
     "OKX Developer Portal API key, secret key, and passphrase",
     "Real OKX seller SDK configuration in the deployed backend",

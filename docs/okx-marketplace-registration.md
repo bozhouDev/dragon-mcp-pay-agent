@@ -2,7 +2,7 @@
 
 ## Registration Status
 
-Status: Ready for manual portal submission after public endpoint and seller credentials are available.
+Status: Public HTTPS demo endpoint is deployed. Manual portal submission is ready after OKX seller credentials are available.
 
 Onchain OS CLI 3.3.13 does not expose a public `register marketplace` or `register asp` command. The current Onchain OS payment docs say sellers can load the Payment SDK into a DApp/MCP service and start charging without payment-gateway registration, while Marketplace listing itself appears to be handled through OKX web surfaces or manual review.
 
@@ -21,7 +21,7 @@ Onchain OS CLI 3.3.13 does not expose a public `register marketplace` or `regist
 - Service subtitle: Convert ordinary APIs into paid OKX Marketplace-ready A2MCP provider packages.
 - Demo service: Token Price API
 - Endpoint path: `GET /price`
-- Public endpoint URL: TODO after deployment
+- Public endpoint URL: `https://aitoday.xin/dragon-mcp/price`
 - Price: `0.01 USDG`
 - Payment mode: `one_time_exact`
 - Real-mode asset boundary: `USDt0`
@@ -56,7 +56,7 @@ The submitted package includes mock payment evidence for reproducible review and
 
 ## Required Before Marketplace Listing
 
-- Public HTTPS endpoint URL for the A2MCP service.
+- Public HTTPS endpoint URL for the A2MCP service: `https://aitoday.xin/dragon-mcp/price`
 - Recipient wallet address.
 - OKX Developer Portal API key, secret key, and passphrase.
 - Real OKX seller SDK configuration in the deployed backend.
@@ -65,4 +65,3 @@ The submitted package includes mock payment evidence for reproducible review and
 ## Recommended Submission Copy
 
 Dragon MCP Pay Agent converts ordinary APIs into paid OKX Marketplace-ready A2MCP provider packages. It helps ASP developers analyze an existing service, define pricing, generate payment assets, create listing metadata, run payment behavior self-tests, and submit a reviewable package. This increases Marketplace supply by reducing the work required to turn normal APIs into paid agent-callable services.
-

@@ -50,6 +50,12 @@ python3 -m pytest -q
 - `dist/service_profile.json`
 - `dist/pricing_plan.json`
 
+## Deployed Demo Endpoint
+
+- Health: `https://aitoday.xin/dragon-mcp/health`
+- Paid demo endpoint: `https://aitoday.xin/dragon-mcp/price?symbol=BTC-USDT`
+- Review header for mock paid success: `x-mock-paid: true`
+
 ## Demo Flow
 
 1. Show `examples/price_api/main.py` as a normal API.
