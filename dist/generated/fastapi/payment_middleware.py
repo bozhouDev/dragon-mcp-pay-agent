@@ -1,0 +1,10 @@
+from __future__ import annotations
+
+from fastapi import Depends
+
+from .payment_adapter import require_payment
+
+
+PAID_ROUTE_PATH = "/price"
+PAID_ROUTE_METHOD = "GET"
+PAYMENT_DEPENDENCY = Depends(require_payment)

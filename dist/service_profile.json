@@ -1,0 +1,141 @@
+{
+  "service_name": "Token Price API",
+  "service_id": "token-price-api",
+  "source_type": "openapi",
+  "source": "examples/price_api/main.py:app.openapi",
+  "framework": "fastapi",
+  "selected_endpoint": {
+    "method": "GET",
+    "path": "/price",
+    "operation_id": "get_price_price_get",
+    "summary": "Get token price",
+    "parameters": [
+      {
+        "name": "symbol",
+        "location": "query",
+        "required": true,
+        "schema_type": "string",
+        "description": "Trading pair such as BTC-USDT."
+      }
+    ],
+    "response_schema": {
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "title": "Symbol",
+          "examples": [
+            "BTC-USDT"
+          ]
+        },
+        "price": {
+          "type": "string",
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "title": "Price",
+          "examples": [
+            "64000.50"
+          ]
+        },
+        "quote_currency": {
+          "type": "string",
+          "title": "Quote Currency",
+          "examples": [
+            "USDT"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "title": "Source",
+          "examples": [
+            "demo-price-oracle"
+          ]
+        }
+      },
+      "type": "object",
+      "required": [
+        "symbol",
+        "price",
+        "quote_currency",
+        "source"
+      ],
+      "title": "PriceResponse"
+    },
+    "response_example": {
+      "symbol": "BTC-USDT",
+      "price": "64000.50",
+      "quote_currency": "USDT",
+      "source": "demo-price-oracle"
+    }
+  },
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/price",
+      "operation_id": "get_price_price_get",
+      "summary": "Get token price",
+      "parameters": [
+        {
+          "name": "symbol",
+          "location": "query",
+          "required": true,
+          "schema_type": "string",
+          "description": "Trading pair such as BTC-USDT."
+        }
+      ],
+      "response_schema": {
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "title": "Symbol",
+            "examples": [
+              "BTC-USDT"
+            ]
+          },
+          "price": {
+            "type": "string",
+            "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+            "title": "Price",
+            "examples": [
+              "64000.50"
+            ]
+          },
+          "quote_currency": {
+            "type": "string",
+            "title": "Quote Currency",
+            "examples": [
+              "USDT"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "examples": [
+              "demo-price-oracle"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "symbol",
+          "price",
+          "quote_currency",
+          "source"
+        ],
+        "title": "PriceResponse"
+      },
+      "response_example": {
+        "symbol": "BTC-USDT",
+        "price": "64000.50",
+        "quote_currency": "USDT",
+        "source": "demo-price-oracle"
+      }
+    }
+  ],
+  "auth_assumptions": [
+    "No existing auth scheme detected for GET /price."
+  ],
+  "risks": [
+    "Mock payment proves local behavior; real OKX mode requires seller credentials and wallet configuration.",
+    "No existing auth scheme detected; payment gate becomes the first access-control layer."
+  ],
+  "generated_at": "2026-06-23T05:51:21.493683Z"
+}

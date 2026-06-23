@@ -8,11 +8,11 @@ from fastapi import Header, HTTPException
 
 @dataclass(frozen=True)
 class PaymentConfig:
-    service_id: str = "{{ service_id }}"
-    endpoint_path: str = "{{ endpoint_path }}"
-    amount: str = "{{ amount }}"
-    currency: str = "{{ currency }}"
-    real_mode_asset: str = "{{ real_mode_asset }}"
+    service_id: str = "token-price-api"
+    endpoint_path: str = "/price"
+    amount: str = "0.01"
+    currency: str = "USDG"
+    real_mode_asset: str = "USDt0"
 
 
 class MockPaymentAdapter:
@@ -86,7 +86,7 @@ OKX_ADAPTER = OkxPaymentAdapter(CONFIG)
 
 
 async def require_payment(
-    x_mock_paid: str | None = Header(default=None, alias="{{ mock_paid_header }}"),
+    x_mock_paid: str | None = Header(default=None, alias="x-mock-paid"),
 ) -> dict[str, str]:
     if os.getenv("DRAGON_PAYMENT_MODE", "mock").lower() == "real":
         return OKX_ADAPTER.verify()

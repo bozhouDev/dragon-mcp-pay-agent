@@ -25,4 +25,4 @@ dragon-mcp-pay-agent = "apps.cli.onboard:app"
 pythonpath = ["."]
 testpaths = ["tests"]
 addopts = "-q"
-
+asyncio_default_fixture_loop_scope = "function"

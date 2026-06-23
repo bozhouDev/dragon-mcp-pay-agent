@@ -1,0 +1,31 @@
+{
+  "name": "Dragon MCP Pay Agent",
+  "agent_id": "dragon-mcp-pay-agent",
+  "description": "Turns ordinary APIs into paid OKX Marketplace-ready A2MCP service packages.",
+  "version": "0.1.0",
+  "capabilities": [
+    "Analyze FastAPI/OpenAPI services",
+    "Recommend paid-call pricing",
+    "Generate payment integration assets",
+    "Create Marketplace listing files",
+    "Run mock payment self-tests"
+  ],
+  "inputs": [
+    "Local FastAPI service path",
+    "OpenAPI JSON file or URL",
+    "Manual endpoint description",
+    "Pricing confirmation"
+  ],
+  "outputs": [
+    "payment_patch.diff",
+    "services.json",
+    "agent_card.json",
+    "listing.md",
+    "test_report.json"
+  ],
+  "okx_fit": [
+    "Accelerates ASP onboarding",
+    "Expands paid A2MCP provider supply",
+    "Demonstrates Agent Payments Protocol adoption"
+  ]
+}

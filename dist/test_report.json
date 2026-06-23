@@ -1,0 +1,54 @@
+{
+  "service_id": "token-price-api",
+  "mode": "mock",
+  "overall_passed": true,
+  "cases": [
+    {
+      "name": "unpaid request is rejected",
+      "passed": true,
+      "status_code": 402,
+      "expected_status": 402,
+      "detail": "Mock payment gate returned PAYMENT_REQUIRED before calling the business endpoint.",
+      "response_sample": {
+        "error": "PAYMENT_REQUIRED",
+        "serviceId": "token-price-api",
+        "paymentHeader": "payment-required"
+      }
+    },
+    {
+      "name": "mock paid request succeeds",
+      "passed": true,
+      "status_code": 200,
+      "expected_status": 200,
+      "detail": "No importable app was provided; used profile response example for local mock evidence.",
+      "response_sample": {
+        "symbol": "BTC-USDT",
+        "price": "64000.50",
+        "quote_currency": "USDT",
+        "source": "demo-price-oracle"
+      }
+    },
+    {
+      "name": "invalid business input is reported",
+      "passed": true,
+      "status_code": 400,
+      "expected_status": 400,
+      "detail": "No importable app was provided; manual mode records invalid input as a review scenario.",
+      "response_sample": {
+        "error": "INVALID_BUSINESS_INPUT"
+      }
+    }
+  ],
+  "generated_artifacts": [
+    "payment_patch.diff",
+    "generated/fastapi/payment_adapter.py",
+    "generated/fastapi/payment_middleware.py",
+    "generated/fastapi/.env.example",
+    "generated/fastapi/test_payment.py",
+    "services.json",
+    "agent_card.json",
+    "listing.md"
+  ],
+  "started_at": "2026-06-23T05:51:21.497770Z",
+  "finished_at": "2026-06-23T05:51:21.497771Z"
+}

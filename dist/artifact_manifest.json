@@ -1,0 +1,26 @@
+{
+  "output_dir": "dist",
+  "required_files": [
+    "payment_patch.diff",
+    "services.json",
+    "agent_card.json",
+    "listing.md",
+    "test_report.json",
+    "runbook.md",
+    "okx_submission_summary.md",
+    "service_profile.json",
+    "pricing_plan.json"
+  ],
+  "generated_files": [
+    "payment_patch.diff",
+    "services.json",
+    "agent_card.json",
+    "listing.md",
+    "test_report.json",
+    "runbook.md",
+    "okx_submission_summary.md",
+    "service_profile.json",
+    "pricing_plan.json"
+  ],
+  "missing_files": []
+}
