@@ -13,6 +13,12 @@ This is a contest submission package, not a generic OKR app. The Agent analyzes 
 
 ## Quick Demo
 
+Install dependencies in your Python 3.11+ environment:
+
+```bash
+python3 -m pip install -e ".[dev]"
+```
+
 Generate the contest package from the included ordinary FastAPI price API:
 
 ```bash
