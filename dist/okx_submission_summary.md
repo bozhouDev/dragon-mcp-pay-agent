@@ -8,7 +8,7 @@ Dragon MCP Pay Agent converts ordinary APIs into paid OKX Marketplace-ready A2MC
 
 - Source service: Token Price API
 - Paid endpoint: `GET https://aitoday.xin/dragon-mcp/price`
-- Price: `0.01 USDG`
+- Price: `0.01 USDT`
 - Self-test status: passed
 
 ## Why This Should Matter To OKX

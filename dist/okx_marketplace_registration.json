@@ -16,7 +16,7 @@
     "endpoint_path": "/price",
     "public_endpoint_url": "https://aitoday.xin/dragon-mcp/price",
     "price": "0.01",
-    "currency": "USDG",
+    "currency": "USDT",
     "payment_mode": "one_time_exact",
     "real_mode_asset": "USDt0",
     "network": "eip155:196"

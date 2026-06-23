@@ -22,7 +22,7 @@ Onchain OS CLI 3.3.13 does not expose a public `register marketplace` or `regist
 - Demo service: Token Price API
 - Endpoint path: `GET /price`
 - Public endpoint URL: `https://aitoday.xin/dragon-mcp/price`
-- Price: `0.01 USDG`
+- Price: `0.01 USDT`
 - Payment mode: `one_time_exact`
 - Real-mode asset boundary: `USDt0`
 - Network: X Layer, `eip155:196`

@@ -23,7 +23,7 @@ def test_cli_generates_complete_dist_from_example_service(tmp_path) -> None:
             "--price",
             "0.01",
             "--currency",
-            "USDG",
+            "USDT",
             "--output-dir",
             str(tmp_path),
             "--yes",
@@ -76,4 +76,3 @@ def test_cli_manual_endpoint_mode_generates_package(tmp_path) -> None:
     profile = json.loads(tmp_path.joinpath("service_profile.json").read_text(encoding="utf-8"))
     assert profile["source_type"] == "manual"
     assert tmp_path.joinpath("agent_card.json").exists()
-

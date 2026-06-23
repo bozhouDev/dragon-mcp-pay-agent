@@ -26,9 +26,11 @@ python3 -m venv .venv
 pip install --upgrade pip
 pip install -e ".[dev]"
 
+if [ ! -f /etc/dragon-mcp-pay-agent.env ]; then
 cat >/etc/dragon-mcp-pay-agent.env <<ENV
 DRAGON_PAYMENT_MODE=mock
 ENV
+fi
 chmod 600 /etc/dragon-mcp-pay-agent.env
 
 cat >"/etc/systemd/system/${SERVICE_NAME}.service" <<SERVICE
@@ -84,4 +86,3 @@ nginx -t
 systemctl reload nginx
 systemctl --no-pager --full status "${SERVICE_NAME}" | sed -n '1,18p'
 curl -fsS "http://127.0.0.1:${SERVICE_PORT}/health"
-

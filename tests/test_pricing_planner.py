@@ -11,7 +11,7 @@ def test_default_get_pricing_is_low_friction() -> None:
     plan = suggest_pricing(profile, confirmed=True)
 
     assert plan.amount == Decimal("0.01")
-    assert plan.currency == "USDG"
+    assert plan.currency == "USDT"
     assert plan.payment_mode == "one_time_exact"
     assert plan.intended_mode == "mock"
     assert plan.confirmed is True

@@ -2,7 +2,7 @@
   "service_id": "token-price-api",
   "endpoint_path": "/price",
   "amount": "0.01",
-  "currency": "USDG",
+  "currency": "USDT",
   "payment_mode": "one_time_exact",
   "intended_mode": "mock",
   "real_mode_asset": "USDt0",

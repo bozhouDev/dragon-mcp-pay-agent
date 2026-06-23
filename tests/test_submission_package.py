@@ -12,7 +12,7 @@ def test_submission_package_contains_required_files(tmp_path) -> None:
             preferred_path="/price",
             service_name="Token Price API",
             price="0.01",
-            currency="USDG",
+            currency="USDT",
             output_dir=tmp_path,
             confirmed=True,
         )

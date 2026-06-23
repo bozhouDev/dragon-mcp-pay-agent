@@ -27,7 +27,7 @@ OKX Agent Marketplace needs high-quality paid services. Dragon MCP Pay Agent hel
 
 ## Demo Service
 
-The sample converts `examples/price_api` from an ordinary `GET /price` endpoint into a paid provider package with `0.01 USDG` listing price and mock payment evidence.
+The sample converts `examples/price_api` from an ordinary `GET /price` endpoint into a paid provider package with `0.01 USDT` listing price and mock payment evidence.
 
 ## Generated Artifacts
 
@@ -38,4 +38,3 @@ The sample converts `examples/price_api` from an ordinary `GET /price` endpoint 
 - `test_report.json`
 - `runbook.md`
 - `okx_submission_summary.md`
-

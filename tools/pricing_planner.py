@@ -9,7 +9,7 @@ def suggest_pricing(
     profile: ServiceProfile,
     *,
     amount: Decimal | str | None = None,
-    currency: str = "USDG",
+    currency: str = "USDT",
     confirmed: bool = False,
     real_mode_asset: str = "USDt0",
     real_mode: bool = False,

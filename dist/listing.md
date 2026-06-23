@@ -5,7 +5,7 @@ Token Price API is packaged as an OKX Marketplace A2MCP provider by Dragon MCP P
 ## Paid API Conversion
 
 - Endpoint: `GET https://aitoday.xin/dragon-mcp/price`
-- Price: `0.01 USDG`
+- Price: `0.01 USDT`
 - Payment mode: `one_time_exact`
 - Mock review header: `x-mock-paid: true`
 - Real mode asset boundary: `USDt0`

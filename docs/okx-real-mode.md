@@ -2,15 +2,16 @@
 
 Dragon MCP Pay Agent defaults to mock payment mode so the contest demo is reproducible without wallet credentials, API keys, whitelist state, or chain transactions.
 
-Real OKX mode is an opt-in adapter boundary for sellers who have the required OKX setup.
+Real OKX mode is an opt-in adapter boundary for generated packages. The deployed contest demo uses the OKX Seller SDK directly.
 
 ## Required Seller Inputs
 
-- `OKX_DEVELOPER_API_KEY`
-- `OKX_RECIPIENT_WALLET`
-- `OKX_BROKER_BASE_URL`
-- `OKX_NETWORK`
-- `OKX_ASSET`
+- `OKX_API_KEY`
+- `OKX_SECRET_KEY`
+- `OKX_PASSPHRASE`
+- `PAY_TO_ADDRESS`
+- `OKX_BASE_URL` (defaults to `https://web3.okx.com`)
+- `OKX_PAYMENT_NETWORK` (defaults to `eip155:196`)
 - Target paid endpoint path and method
 - Confirmed price and payment mode
 
@@ -45,4 +46,3 @@ Judges should use mock mode for local review:
 - OKX Agent Payments overview: `https://web3.okx.com/onchainos/dev-docs/payments/overview`
 - OKX Seller SDK integration: `https://web3.okx.com/onchainos/dev-docs/payments/service-seller-sdk`
 - OKX payments SDK repository: `https://github.com/okx/payments`
-

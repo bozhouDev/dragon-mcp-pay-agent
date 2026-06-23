@@ -1,5 +1,6 @@
 from fastapi.testclient import TestClient
 
+from apps.service import main
 from apps.service.main import app
 
 
@@ -19,6 +20,8 @@ def test_metadata_endpoint_describes_a2mcp_service() -> None:
     assert response.status_code == 200
     assert response.json()["serviceType"] == "A2MCP"
     assert response.json()["endpoint"] == "/price"
+    assert response.json()["currency"] == "USDT"
+    assert response.json()["network"] == "eip155:196"
 
 
 def test_price_requires_mock_payment_header() -> None:
@@ -52,3 +55,15 @@ def test_price_preserves_business_errors_after_payment() -> None:
     )
 
     assert response.status_code == 404
+
+
+def test_real_payment_runtime_reports_missing_env(monkeypatch) -> None:
+    monkeypatch.setenv("DRAGON_PAYMENT_MODE", "real")
+    for name in main.REQUIRED_REAL_ENV:
+        monkeypatch.delenv(name, raising=False)
+
+    runtime = main.configure_okx_payment(main.FastAPI())
+
+    assert runtime.mode == "real"
+    assert not runtime.okx_enabled
+    assert runtime.missing_env == main.REQUIRED_REAL_ENV

@@ -11,7 +11,7 @@ class PaymentConfig:
     service_id: str = "token-price-api"
     endpoint_path: str = "/price"
     amount: str = "0.01"
-    currency: str = "USDG"
+    currency: str = "USDT"
     real_mode_asset: str = "USDt0"
 
 
@@ -44,13 +44,16 @@ class MockPaymentAdapter:
 class OkxPaymentAdapter:
     def __init__(self, config: PaymentConfig) -> None:
         self.config = config
-        self.developer_api_key = os.getenv("OKX_DEVELOPER_API_KEY")
-        self.recipient_wallet = os.getenv("OKX_RECIPIENT_WALLET")
-        self.broker_base_url = os.getenv("OKX_BROKER_BASE_URL")
+        self.api_key = os.getenv("OKX_API_KEY")
+        self.secret_key = os.getenv("OKX_SECRET_KEY")
+        self.passphrase = os.getenv("OKX_PASSPHRASE")
+        self.pay_to_address = os.getenv("PAY_TO_ADDRESS")
+        self.base_url = os.getenv("OKX_BASE_URL", "https://web3.okx.com")
+        self.network = os.getenv("OKX_PAYMENT_NETWORK", "eip155:196")
 
     @property
     def configured(self) -> bool:
-        return bool(self.developer_api_key and self.recipient_wallet and self.broker_base_url)
+        return bool(self.api_key and self.secret_key and self.passphrase and self.pay_to_address)
 
     def route_config_preview(self) -> dict[str, str]:
         return {
@@ -58,9 +61,10 @@ class OkxPaymentAdapter:
             "path": self.config.endpoint_path,
             "amount": self.config.amount,
             "currency": self.config.currency,
-            "asset": os.getenv("OKX_ASSET", self.config.real_mode_asset),
-            "network": os.getenv("OKX_NETWORK", "eip155:196"),
-            "recipient": self.recipient_wallet or "OKX_RECIPIENT_WALLET",
+            "asset": self.config.real_mode_asset,
+            "network": self.network,
+            "recipient": self.pay_to_address or "PAY_TO_ADDRESS",
+            "baseUrl": self.base_url,
             "paymentMode": "one_time_exact",
         }
 
@@ -69,11 +73,12 @@ class OkxPaymentAdapter:
             raise HTTPException(
                 status_code=503,
                 detail={
-                    "error": "OKX_REAL_MODE_NOT_CONFIGURED",
+                    "error": "OKX_REAL_MODE_UNAVAILABLE",
                     "requiredEnv": [
-                        "OKX_DEVELOPER_API_KEY",
-                        "OKX_RECIPIENT_WALLET",
-                        "OKX_BROKER_BASE_URL",
+                        "OKX_API_KEY",
+                        "OKX_SECRET_KEY",
+                        "OKX_PASSPHRASE",
+                        "PAY_TO_ADDRESS",
                     ],
                 },
             )

@@ -42,7 +42,7 @@ def onboard(
     ),
     service_name: Optional[str] = typer.Option(None, "--service-name", help="Marketplace service name."),
     price: Optional[str] = typer.Option(None, "--price", help="Price per paid call."),
-    currency: str = typer.Option("USDG", "--currency", help="Marketplace-facing listing currency."),
+    currency: str = typer.Option("USDT", "--currency", help="Marketplace-facing listing currency."),
     output_dir: Path = typer.Option(Path("dist"), "--output-dir", help="Generated package output directory."),
     real_mode: bool = typer.Option(False, "--real-mode", help="Document real OKX mode as the intended adapter path."),
     yes: bool = typer.Option(False, "--yes", "-y", help="Confirm pricing and generation non-interactively."),

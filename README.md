@@ -27,7 +27,7 @@ python3 -m apps.cli.onboard onboard \
   --preferred-path /price \
   --service-name "Token Price API" \
   --price 0.01 \
-  --currency USDG \
+  --currency USDT \
   --output-dir dist \
   --yes
 ```
@@ -69,7 +69,7 @@ python3 -m pytest -q
 
 Mock mode is the default because it is reproducible for judges and does not require a wallet, API key, whitelist, or chain transaction. It still proves the payment-gated behavior expected from a paid API conversion: unpaid requests receive payment-required evidence, paid requests reach the business endpoint, and business validation errors remain visible.
 
-Real OKX mode is opt-in and documented in `docs/okx-real-mode.md`. It requires seller credentials, a recipient wallet, broker configuration, network configuration, and an OKX-supported payment asset.
+Real OKX mode is opt-in for generated packages and documented in `docs/okx-real-mode.md`. The deployed demo endpoint is configured for the OKX Seller SDK on X Layer (`eip155:196`) at `0.01 USDT` per paid call.
 
 ## Project Layout
 

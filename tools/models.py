@@ -130,7 +130,7 @@ class PricingPlan(JsonModel):
     service_id: str
     endpoint_path: str
     amount: Decimal = Decimal("0.01")
-    currency: str = "USDG"
+    currency: str = "USDT"
     payment_mode: Literal["one_time_exact"] = "one_time_exact"
     intended_mode: Literal["mock", "real-boundary"] = "mock"
     real_mode_asset: str = "USDt0"

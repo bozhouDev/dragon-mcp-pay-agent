@@ -257,7 +257,7 @@ Requirements: R5, R6, R8, R14
 Work:
 
 - 根据 endpoint 类型、调用成本、Demo 口径生成默认价格建议。
-- 默认参赛 Demo 可使用 `0.01 USDG` 作为 listing 价格展示；真实 OKX SDK route config 中的资产配置必须与官方支持资产分离，允许使用 `USD₮0` 等官方文档支持的配置。
+- 默认参赛 Demo 使用 `0.01 USDT` 作为 listing 价格展示；真实 OKX SDK route config 中的资产配置必须与官方支持资产分离，允许使用 `USD₮0` 等官方文档支持的配置。
 - 价格、币种、付费模式、目标 endpoint 进入确认状态后才能继续生成。
 
 Tests:

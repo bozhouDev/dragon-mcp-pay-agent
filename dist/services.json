@@ -9,7 +9,7 @@
       "endpoint": "https://aitoday.xin/dragon-mcp/price",
       "method": "GET",
       "price": "0.01",
-      "currency": "USDG",
+      "currency": "USDT",
       "payment_mode": "one_time_exact",
       "capabilities": [
         "A2MCP provider-ready endpoint metadata",

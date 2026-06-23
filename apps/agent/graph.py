@@ -28,7 +28,7 @@ class OnboardingRequest:
     service_name: str | None = None
     preferred_path: str | None = None
     price: Decimal | str | None = None
-    currency: str = "USDG"
+    currency: str = "USDT"
     output_dir: Path = Path("dist")
     real_mode: bool = False
     confirmed: bool = False
