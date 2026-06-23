@@ -21,6 +21,10 @@ dev = [
 [project.scripts]
 dragon-mcp-pay-agent = "apps.cli.onboard:app"
 
+[tool.setuptools.packages.find]
+include = ["apps*", "examples*", "tools*"]
+exclude = ["dist*", "docs*", "templates*", "tests*"]
+
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
