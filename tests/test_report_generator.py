@@ -17,6 +17,7 @@ def test_report_generator_writes_runbook_and_submission_summary(tmp_path) -> Non
     assert {path.name for path in paths} == {"runbook.md", "okx_submission_summary.md"}
     assert "Dragon MCP Pay Agent Runbook" in runbook
     assert "Real OKX mode" in runbook
+    assert "Missing Required Files" in runbook
+    assert "payment_patch.diff" in runbook
     assert "OKX Submission Summary" in summary
     assert "Marketplace supply" in summary
-

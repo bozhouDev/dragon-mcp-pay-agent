@@ -4,6 +4,7 @@
   "amount": "0.01",
   "currency": "USDG",
   "payment_mode": "one_time_exact",
+  "intended_mode": "mock",
   "real_mode_asset": "USDt0",
   "confirmed": true,
   "reasoning": [
@@ -11,5 +12,5 @@
     "The contest demo price is intentionally small so judges can understand the paid-call flow quickly.",
     "Real OKX mode keeps asset configuration separate from marketplace-facing listing currency."
   ],
-  "generated_at": "2026-06-23T05:51:21.494017Z"
+  "generated_at": "2026-06-23T05:53:30.079114Z"
 }

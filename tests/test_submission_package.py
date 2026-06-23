@@ -24,6 +24,8 @@ def test_submission_package_contains_required_files(tmp_path) -> None:
 
     report = json.loads(tmp_path.joinpath("test_report.json").read_text(encoding="utf-8"))
     assert report["overall_passed"] is True
+    runbook = tmp_path.joinpath("runbook.md").read_text(encoding="utf-8")
+    assert "Missing Required Files\n\n- None" in runbook
 
 
 def test_readme_and_submission_docs_name_okx_marketplace() -> None:
@@ -34,4 +36,3 @@ def test_readme_and_submission_docs_name_okx_marketplace() -> None:
     assert "OKX Marketplace-ready A2MCP" in readme
     assert "90-120 seconds" in demo_script
     assert "ASP developers" in summary
-

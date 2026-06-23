@@ -39,6 +39,7 @@ def generate_listing_assets(
                 ],
                 payment={
                     "mode": pricing.payment_mode,
+                    "intendedMode": pricing.intended_mode,
                     "mockHeader": "x-mock-paid: true",
                     "realModeAsset": pricing.real_mode_asset,
                     "requiresSellerCredentials": True,
@@ -98,4 +99,3 @@ def generate_listing_assets(
         encoding="utf-8",
     )
     return [services_path, agent_card_path, listing_path]
-

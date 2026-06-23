@@ -6,6 +6,7 @@
 - Endpoint: `GET /price`
 - Price: `0.01 USDG`
 - Payment mode: `one_time_exact`
+- Intended mode: `mock`
 
 ## Review Path
 
@@ -22,13 +23,14 @@
 - `agent_card.json`
 - `listing.md`
 - `test_report.json`
+- `runbook.md`
+- `okx_submission_summary.md`
 - `service_profile.json`
 - `pricing_plan.json`
 
 ## Missing Required Files
 
-- `runbook.md`
-- `okx_submission_summary.md`
+- None
 
 ## Self-Test Cases
 

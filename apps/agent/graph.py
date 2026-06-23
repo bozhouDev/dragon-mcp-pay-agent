@@ -116,6 +116,7 @@ def _build_pricing(profile: ServiceProfile, request: OnboardingRequest) -> Prici
         currency=request.currency,
         confirmed=request.confirmed,
         real_mode_asset="USDt0",
+        real_mode=request.real_mode,
     )
 
 
@@ -139,4 +140,3 @@ def _relative(root: Path, path: Path) -> str:
         return str(path.relative_to(root))
     except ValueError:
         return str(path)
-

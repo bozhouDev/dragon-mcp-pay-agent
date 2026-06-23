@@ -13,12 +13,13 @@ def write_submission_reports(
 ) -> list[Path]:
     destination = Path(output_dir)
     destination.mkdir(parents=True, exist_ok=True)
-    manifest = ArtifactManifest.from_output_dir(destination, REQUIRED_DIST_FILES)
 
     runbook_path = destination / "runbook.md"
     summary_path = destination / "okx_submission_summary.md"
-    runbook_path.write_text(_runbook(profile, pricing, report, manifest), encoding="utf-8")
     summary_path.write_text(_summary(profile, pricing, report), encoding="utf-8")
+    runbook_path.write_text("", encoding="utf-8")
+    manifest = ArtifactManifest.from_output_dir(destination, REQUIRED_DIST_FILES)
+    runbook_path.write_text(_runbook(profile, pricing, report, manifest), encoding="utf-8")
     return [runbook_path, summary_path]
 
 
@@ -43,6 +44,7 @@ def _runbook(
 - Endpoint: `{endpoint.method} {endpoint.path}`
 - Price: `{pricing.amount} {pricing.currency}`
 - Payment mode: `{pricing.payment_mode}`
+- Intended mode: `{pricing.intended_mode}`
 
 ## Review Path
 
@@ -98,4 +100,3 @@ The project increases Marketplace supply by helping ASP developers package exist
 - `test_report.json`
 - `runbook.md`
 """
-

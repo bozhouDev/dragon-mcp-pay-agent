@@ -137,5 +137,5 @@
     "Mock payment proves local behavior; real OKX mode requires seller credentials and wallet configuration.",
     "No existing auth scheme detected; payment gate becomes the first access-control layer."
   ],
-  "generated_at": "2026-06-23T05:51:21.493683Z"
+  "generated_at": "2026-06-23T05:53:30.076193Z"
 }

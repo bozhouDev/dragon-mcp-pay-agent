@@ -132,6 +132,7 @@ class PricingPlan(JsonModel):
     amount: Decimal = Decimal("0.01")
     currency: str = "USDG"
     payment_mode: Literal["one_time_exact"] = "one_time_exact"
+    intended_mode: Literal["mock", "real-boundary"] = "mock"
     real_mode_asset: str = "USDt0"
     confirmed: bool = False
     reasoning: list[str] = Field(default_factory=list)
@@ -240,4 +241,3 @@ REQUIRED_DIST_FILES = [
     "service_profile.json",
     "pricing_plan.json",
 ]
-

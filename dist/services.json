@@ -18,6 +18,7 @@
       ],
       "payment": {
         "mode": "one_time_exact",
+        "intendedMode": "mock",
         "mockHeader": "x-mock-paid: true",
         "realModeAsset": "USDt0",
         "requiresSellerCredentials": true

@@ -13,6 +13,7 @@ def test_default_get_pricing_is_low_friction() -> None:
     assert plan.amount == Decimal("0.01")
     assert plan.currency == "USDG"
     assert plan.payment_mode == "one_time_exact"
+    assert plan.intended_mode == "mock"
     assert plan.confirmed is True
     assert plan.real_mode_asset == "USDt0"
 
@@ -34,3 +35,11 @@ def test_manual_mode_reasoning_mentions_confirmation() -> None:
     assert plan.confirmed is False
     assert any("Manual endpoint" in item for item in plan.reasoning)
 
+
+def test_real_mode_request_is_recorded_in_pricing_plan() -> None:
+    profile = parse_openapi_document(app.openapi(), source="example", preferred_path="/price")
+
+    plan = suggest_pricing(profile, confirmed=True, real_mode=True)
+
+    assert plan.intended_mode == "real-boundary"
+    assert any("Real OKX mode" in item for item in plan.reasoning)
