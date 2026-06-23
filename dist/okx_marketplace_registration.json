@@ -1,0 +1,50 @@
+{
+  "registration_status": "ready_for_manual_portal_submission_after_public_endpoint",
+  "provider": {
+    "name": "Dragon MCP Pay Agent",
+    "service_type": "A2MCP",
+    "category": "Developer tooling / Agent payments / Marketplace onboarding",
+    "github": "https://github.com/bozhouDev/dragon-mcp-pay-agent",
+    "submission_zip": "dragon-mcp-pay-agent-submission.zip",
+    "primary_contact": "TODO"
+  },
+  "service": {
+    "title": "Dragon MCP Pay Agent",
+    "subtitle": "Convert ordinary APIs into paid OKX Marketplace-ready A2MCP provider packages.",
+    "demo_service": "Token Price API",
+    "method": "GET",
+    "endpoint_path": "/price",
+    "public_endpoint_url": "TODO",
+    "price": "0.01",
+    "currency": "USDG",
+    "payment_mode": "one_time_exact",
+    "real_mode_asset": "USDt0",
+    "network": "eip155:196"
+  },
+  "capabilities": [
+    "Analyze FastAPI/OpenAPI services",
+    "Build service_profile.json",
+    "Recommend paid-call pricing",
+    "Generate FastAPI payment adapter assets",
+    "Generate A2MCP-ready services.json, agent_card.json, and listing copy",
+    "Run local payment behavior self-tests",
+    "Produce OKX submission summary and runbook"
+  ],
+  "evidence": [
+    "dist/services.json",
+    "dist/agent_card.json",
+    "dist/listing.md",
+    "dist/test_report.json",
+    "dist/runbook.md",
+    "dist/okx_submission_summary.md",
+    "docs/demo-script.md",
+    "docs/okx-real-mode.md"
+  ],
+  "required_before_marketplace_listing": [
+    "Public HTTPS endpoint URL",
+    "Recipient wallet address",
+    "OKX Developer Portal API key, secret key, and passphrase",
+    "Real OKX seller SDK configuration in the deployed backend",
+    "OKX portal/manual review submission"
+  ]
+}
