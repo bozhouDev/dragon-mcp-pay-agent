@@ -69,6 +69,7 @@ def configure_okx_payment(fastapi_app: FastAPI) -> PaymentRuntime:
     pay_to = os.environ["PAY_TO_ADDRESS"]
     price = os.getenv("DRAGON_PAYMENT_PRICE", DEFAULT_PRICE)
     base_url = os.getenv("OKX_BASE_URL", DEFAULT_BASE_URL)
+    public_resource = os.getenv("DRAGON_PUBLIC_RESOURCE_URL")
 
     try:
         facilitator = OKXFacilitatorClient(
@@ -95,6 +96,7 @@ def configure_okx_payment(fastapi_app: FastAPI) -> PaymentRuntime:
                         max_timeout_seconds=300,
                     )
                 ],
+                resource=public_resource,
                 description="Dragon MCP Pay Agent paid token price lookup",
                 mime_type="application/json",
             )

@@ -12,6 +12,7 @@ Real OKX mode is an opt-in adapter boundary for generated packages. The deployed
 - `PAY_TO_ADDRESS`
 - `OKX_BASE_URL` (defaults to `https://web3.okx.com`)
 - `OKX_PAYMENT_NETWORK` (defaults to `eip155:196`)
+- `DRAGON_PUBLIC_RESOURCE_URL` (public paid endpoint URL shown in the payment challenge)
 - Target paid endpoint path and method
 - Confirmed price and payment mode
 
